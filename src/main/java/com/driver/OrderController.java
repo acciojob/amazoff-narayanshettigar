@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("orders")
 public class OrderController {
     @Autowired
-    OrderService orderService;
+    OrderService orderService = new OrderService();
 
 
     @PostMapping("/add-order")
@@ -47,7 +47,7 @@ public class OrderController {
     @GetMapping("/get-order-by-id/{orderId}")
     public ResponseEntity<Order> getOrderById(@PathVariable String orderId){
 
-        //Order order= null;
+        //Order-order= null;
         //order should be returned with an orderId.
         Order order= null;
         order=orderService.getOrderById(orderId);
