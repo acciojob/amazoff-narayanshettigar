@@ -118,12 +118,13 @@ public class OrderRepository {
     }
 
     public List<String> getAllOrders(){
-        List<String> orders = null;
-        for (String ordersId: orderHashMap.keySet()){
-            orders.add(ordersId);
-        }
-        //Get all orders
-        return orders;
+//        List<String> orders = null;
+//        for (String ordersId: orderHashMap.keySet()){
+//            orders.add(ordersId);
+//        }
+//        //Get all orders
+//        return orders;
+        return new ArrayList<>(orderHashMap.keySet());
     }
 
     public Integer getCountOfUnassignedOrders() {
