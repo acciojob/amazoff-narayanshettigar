@@ -12,10 +12,18 @@ import java.util.List;
 
 @Repository
 public class OrderRepository {
-    HashMap<String,Order> orderHashMap = new HashMap<>();
-    HashMap<String,DeliveryPartner> deliveryPartnerHashMap = new HashMap<>();
+    private HashMap<String,Order> orderHashMap = new HashMap<>();
+    private HashMap<String,DeliveryPartner> deliveryPartnerHashMap = new HashMap<>();
     private HashMap<String, String> orderPartnerHashMap;
     private HashMap<String, HashSet<String>> partnerOrderHashMap;
+
+    public OrderRepository() {
+        this.orderHashMap = orderHashMap;
+        this.deliveryPartnerHashMap = deliveryPartnerHashMap;
+        this.orderPartnerHashMap = orderPartnerHashMap;
+        this.partnerOrderHashMap = partnerOrderHashMap;
+    }
+
     public String addOrder(Order order){
         orderHashMap.put(order.getId(),order);
         return "ok";
